@@ -32,3 +32,16 @@ let searchInArray = {
 }
 searchInArray.min(arr) // -8
 searchInArray.max(arr) // 3
+
+4. setTimeout
+let arr = [1,2,3,4,5]
+for (i of arr) {
+  setTimeout((arg) => {
+    console.log(arg)
+  }, 0, i)
+}
+
+5. Palindrome
+let isPalindrome = (str) => {
+	return str === str.split('').reverse().join('')
+}
