@@ -82,3 +82,32 @@ let andrey = user('Andrey', 'Teacher')
 andrey.getJob() // Teacher
 andrey.setJob('Programmer')
 andrey.getJob() // Programmer
+
+8. Even Fibonacci Numbers
+const fiboEvenSum = (num) => {
+  let a = 1, b = 0, temp;
+
+  while (num >= 0){
+    temp = a;
+    a = a + b;
+    b = temp;
+    num--;
+  }
+  
+  // OR
+
+  let i = 0;
+
+  // while (i <= num){
+  //   temp = a;
+  //   a = a + b;
+  //   b = temp;
+  //   i++;
+  // }
+
+  if ( !(b%2) ) return b;
+}
+
+fiboEvenSum(5) // 8
+
+
