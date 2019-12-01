@@ -85,29 +85,33 @@ andrey.getJob() // Programmer
 
 8. Even Fibonacci Numbers
 const fiboEvenSum = (num) => {
-  let a = 1, b = 0, temp;
+  let a = 1, b = 1, temp,
+      result = 0;
 
-  while (num >= 0){
+  while (num > 0){
     temp = a;
     a = a + b;
     b = temp;
+    if (!( b%2 )) result += b;
     num--;
   }
   
   // OR
 
-  let i = 0;
-
-  // while (i <= num){
+  // let i = 0;
+  // while (i < num){
   //   temp = a;
   //   a = a + b;
   //   b = temp;
+  //   if (!( b%2 )) result += b;
   //   i++;
   // }
 
-  if ( !(b%2) ) return b;
+  return result;
 }
 
-fiboEvenSum(5) // 8
+fiboEvenSum(10) // 44
+
+
 
 
