@@ -129,6 +129,9 @@ const log = console.log
 log(primeFactor.min(13195)) // 5
 log(primeFactor.max(13195)) // 29
 
+[2,2,2,2].map((item, index) => {
+  return parseInt(item, index) 
+}) // [2, NaN, NaN, 2]
 
 
 
