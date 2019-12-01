@@ -87,17 +87,14 @@ andrey.getJob() // Programmer
 const fiboEvenSum = (num) => {
   let a = 1, b = 1, temp,
       result = 0;
-
   while (num > 0){
     temp = a;
     a = a + b;
     b = temp;
     if (!( b%2 )) result += b;
     num--;
-  }
-  
+  }  
   // OR
-
   // let i = 0;
   // while (i < num){
   //   temp = a;
@@ -106,11 +103,31 @@ const fiboEvenSum = (num) => {
   //   if (!( b%2 )) result += b;
   //   i++;
   // }
-
   return result;
 }
-
 fiboEvenSum(10) // 44
+
+9. Prime Factor
+const primeFactor = {
+  min: (num) => {
+    let i = 2;
+    while (i <= num) {
+      if (num % i == 0) return i
+      else i += 1
+    }
+  },
+  max: (num) => {
+    let i = 2;
+    while (i <= num) {      
+      if (num % i == 0) num /= i
+      else i += 1
+    }
+    return i;
+  }
+}
+const log = console.log
+log(primeFactor.min(13195)) // 5
+log(primeFactor.max(13195)) // 29
 
 
 
