@@ -45,3 +45,40 @@ for (i of arr) {
 let isPalindrome = (str) => {
 	return str === str.split('').reverse().join('')
 }
+
+6. call
+const user = {
+  name: 'default',
+  greeting: function(arg = 'Welcome!') {
+    console.log(`${arg} Hello ${this.name}`)
+  }
+}
+const me = {
+  name: 'Andrey'
+}
+user.greeting.call(me, 'Hi!')
+
+7. Closure
+const log = console.log
+const user = (name, job) => {
+  let _name = name;
+  let _job = job;
+
+  return {
+    // getter
+    getName: () => {
+      return _name
+    },
+    getJob: () => {
+      return log(_job)
+    },
+    // setter
+    setJob: newJob => {
+      _job = newJob;
+    }
+  }
+}
+let andrey = user('Andrey', 'Teacher')
+andrey.getJob() // Teacher
+andrey.setJob('Programmer')
+andrey.getJob() // Programmer
